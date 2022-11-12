@@ -4,30 +4,39 @@ pcb-badger2040-wlan
 A small pcb that allows to add an ESP-01S and/or PCF8523-RTC-breakout
 to the back of a Pimoroni Badger2040:
 
-![](pcb-layout.png)
-![](schematic.png)
+  - Badger2040 with SMD-pins:  
+    ![](badger-with-smdpins.jpg)
+
+  - PCB added:  
+    ![](badger-with-pcb.jpg)
+
+  - ESP-01S connected:  
+    ![](badger-with-esp-01s.jpg)
+
+  - Additionally with RTC (PCF8523):  
+    ![](badger-with-esp-01s-and-rtc.jpg)
+
+
+Design-Files
+------------
 
 KiCAD source files are in `badger-2040-wlan.kicad`. Production files
-for JLCPCB are in directory `production`. If you don't need the
-wakeup-hack described below, it is sufficient to order only the
-pcb without the SMT-assembly.
+for JLCPCB are in directory `production`.
+
+![](pcb-layout.png)
+![](schematic.png)
 
 
 Hack to wakeup the Badger2040 using the RTC
 -------------------------------------------
 
-The RTC-alarm pin has a pullup and is connected using an inverter
-to an additional pin. Note that the Badger2040 only has 10 pads!
-This additional pin must be connected with a wire to one of the
-buttons on the front. I have a wire going from the pin through
-the mounting hole to the "down"-button. The button can still
-be used normally.
-
-If you don't use the ESP-01S, you can also connect the
+If you don't use the ESP-01S, you can connect the
 RTC-alarm pin to the INT-pin by closing the jumper on the
-back. Wakeup will then work if you constantly hold
-one of the buttons pressed
+back. Note that wakeup will only work with battery if you
+constantly hold one of the buttons pressed
 (see <https://github.com/bablokb/badger2040-button-clamp>).
+
+Also, wakup is currently not implemented in MicroPython.
 
 
 License
