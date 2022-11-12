@@ -2,7 +2,7 @@ pcb-badger2040-wlan
 ===================
 
 A small pcb that allows to add an ESP-01S and/or PCF8523-RTC-breakout
-to the back of a Pimoroni Badger2040:
+to the back of a Pimoroni Badger2040 (or Tufty2040):
 
   - Badger2040 with SMD-pins:  
     ![](badger-with-smdpins.jpg)
@@ -16,12 +16,16 @@ to the back of a Pimoroni Badger2040:
   - Additionally with RTC (PCF8523):  
     ![](badger-with-esp-01s-and-rtc.jpg)
 
+Note that the images show an old Rev 3 version of the PCB.
 
 Design-Files
 ------------
 
 KiCAD source files are in `badger-2040-wlan.kicad`. Production files
-for JLCPCB are in directory `production`.
+for JLCPCB are in directory `production`. Since the pcb does not
+need any SMD-components (in Rev 4), these pcb are really easy
+to order (just upload the zip) and cheap (I got five for less
+than 7 Euro).
 
 ![](pcb-layout.png)
 ![](schematic.png)
